@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Management</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+</head>
+
+<body>
+    <section class="section">
+        <div class="container">
+            <h1 class="title">User Management</h1>
+
+            <!-- Formulario para agregar un usuario -->
+            <form id="userForm">
+                <div class="field">
+                    <label class="label">Name</label>
+                    <div class="control">
+                        <input class="input" type="text" id="name" placeholder="Enter name" required>
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Email</label>
+                    <div class="control">
+                        <input class="input" type="email" id="email" placeholder="Enter email" required>
+                    </div>
+                </div>
+                <div class="control">
+                    <button class="button is-primary" type="submit">Add User</button>
+                </div>
+            </form>
+
+            <!-- Tabla para mostrar los usuarios -->
+            <table class="table is-fullwidth is-striped" id="userTable">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Aquí se llenará la tabla con los usuarios desde el backend -->
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

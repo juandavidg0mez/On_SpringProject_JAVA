@@ -6,9 +6,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class MyController {
-
+// Recordar eque el metodo se debe llamar igual que la vista
     @GetMapping("/index")
-    public String showIndex() {
-        return "redirect:/home"; // Esto puede causar el ciclo
+    public String home() {
+        return "home"; // Esto puede causar el ciclo
     }
 }

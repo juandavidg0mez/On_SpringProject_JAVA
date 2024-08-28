@@ -3,6 +3,8 @@ package com.project.main_project.pais.domain.entity;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import com.project.main_project.city.domain.entity.city;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -11,13 +13,13 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
-import com.project.main_project.city.domain.entity.city;
 
 @Entity
 @Table(name = "Country")
 public class Country {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "Country_id" )
     private Long id;
 
     @Column
@@ -26,8 +28,10 @@ public class Country {
     @Column(columnDefinition = "TIMESTAMP")
     private LocalDateTime localTime;
 
-    @OneToMany(mappedBy = "Country" , cascade =  CascadeType.ALL)
+    @OneToMany(mappedBy = "country" , cascade =  CascadeType.ALL)
     private List<city> cities;
+
+    
 
     public Country() {
     }

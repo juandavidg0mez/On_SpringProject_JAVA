@@ -1,7 +1,9 @@
 package com.project.main_project.Address.domain.entity;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
+import com.project.main_project.Employee.domain.entity.Employee;
 import com.project.main_project.city.domain.entity.city;
 
 
@@ -11,6 +13,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
@@ -43,6 +46,10 @@ public class Address {
     @ManyToOne
     @JoinColumn(name = "city_id")
     private city City;
+
+    @ManyToMany(mappedBy = "address")
+    private List<Employee> employee;
+
 
 
     public Address() {
@@ -110,6 +117,14 @@ public class Address {
 
     public void setCity(city city) {
         City = city;
+    }
+
+    public List<Employee> getEmployee() {
+        return employee;
+    }
+
+    public void setEmployee(List<Employee> employee) {
+        this.employee = employee;
     }
 
     

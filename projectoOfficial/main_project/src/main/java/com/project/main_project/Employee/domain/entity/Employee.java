@@ -34,7 +34,7 @@ public class Employee {
     private String LastNameEmployee;
 
     @Column(name =  "Picture", columnDefinition = "LONGBLOB")
-    private Byte[] img;
+    private byte[] img;
 
     @Column(name ="Activo", columnDefinition = "TINYINT")
     private int Activo;
@@ -83,11 +83,11 @@ public class Employee {
         LastNameEmployee = lastNameEmployee;
     }
 
-    public Byte[] getImg() {
+    public byte[] getImg() {
         return img;
     }
 
-    public void setImg(Byte[] img) {
+    public void setImg(byte[] img) {
         this.img = img;
     }
 
